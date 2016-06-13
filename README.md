@@ -1,5 +1,5 @@
 # lanframework-php
-一个简单的PHP MVC框架，简单实现了各项功能，内置了两种模式即输出json以及页面渲染模式来满足各类需求。
+一个简单的PHP MVC框架，简单实现了各项功能，内置了两种模式即输出json以及页面渲染模式来满足各类需求。<br />
 应用文件：Application
 框架文件：Lanframework
 公共文件：public（用于放置css、js以及图片文件）
