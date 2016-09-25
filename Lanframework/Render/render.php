@@ -22,12 +22,14 @@ class render{
   }
     try{
     require_once($path);
+
   }catch(Exception $e){
     Throw new \Exception('文件不存在','402');
     exit();
   }
     $out = ob_get_clean();
     echo $out;
+    exit();
   }
   private function renderJson($arr){
   echo json_encode($arr);

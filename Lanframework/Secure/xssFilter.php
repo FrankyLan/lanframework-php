@@ -52,8 +52,8 @@ class xssfilter{
 	public function decodeHtmlEntity(){
 		$this->context = html_entity_decode($this->context);// 解码HTML实体
 		$this->context = str_replace(array('&quot','&amp','&lt','&gt','&nbsp'), array('"','&','<','>',' '), $this->context);
-		$this->context = preg_replace('/\&\#0*(3[2-9]|[4-9][0-9]|1[0-1][0-9]|12[0-6])/e', 'chr(\\1)', $this->context);
-		$this->context = preg_replace('/\&\#x([2-6][0-9a-f]|7[0-9a-e])/ei', 'chr(hexdec("\\1"))', $this->context);
+		$this->context = preg_replace_callback('/\&\#0*(3[2-9]|[4-9][0-9]|1[0-1][0-9]|12[0-6])/', function($matches){return chr("\\1");}, $this->context);
+		$this->context = preg_replace_callback('/\&\#x([2-6][0-9a-f]|7[0-9a-e])/i',function($matches){return chr(hexdec("\\1"));}, $this->context);
 	}
 	private function removeKeywordSapce($matches=array()){
 		return preg_replace('/\s/i', '', $matches[0]);

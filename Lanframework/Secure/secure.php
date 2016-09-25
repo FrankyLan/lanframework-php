@@ -2,7 +2,7 @@
 namespace Secure;
 class secure{
   public function init(){
-    $xssfilter=new \Secure\xssfilter();//防范XSS攻击，过滤script字符等
+    $xssfilter=new \Secure\xssFilter();//防范XSS攻击，过滤script字符等
     foreach($_GET as $key=>$value){
       $_GET[$key]=$xssfilter->clean($value);
     }

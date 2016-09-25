@@ -5,6 +5,9 @@ class easysql{
 function insert($post,$table)  {
 foreach ($post as $key => $value)
 {
+  if($value==''){
+    continue;
+  }
     $$key=$this->sql_safe($value);
 		$param1.=$key.",";
 		$param2.="'".$$key."',";
@@ -15,6 +18,9 @@ return $insert_sql;
 function insert_nosafe($post,$table)  {
 foreach ($post as $key => $value)
 {
+  if($value==''){
+    continue;
+  }
     $$key=addslashes($value);
 		$param1.=$key.",";
 		$param2.="'".$$key."',";
@@ -25,6 +31,9 @@ return $insert_sql;
 function update($post,$table,$param){
   foreach ($post as $key => $value)
   {
+    if($value==''){
+      continue;
+    }
       $$key=$this->sql_safe($value);
   		$param3.=$key."='".$$key."',";
   }
@@ -34,6 +43,9 @@ return $update_sql;
 function update_nosafe($post,$table,$param){
   foreach ($post as $key => $value)
   {
+    if($value==''){
+      continue;
+    }
       $$key=addslashes($value);
   		$param3.=$key."='".$$key."',";
   }

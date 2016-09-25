@@ -26,7 +26,7 @@ class router{
   $url=strtolower(explode("?",$url)[0]);
   $url=substr($url,1);
   $MatchUrl=explode("/",$url);
-  return array('module'=>$MatchUrl[0],'action'=>$MatchUrl[1],'arg'=>array(array_slice($MatchUrl,2)));
+  return array('module'=>$MatchUrl[0],'action'=>$MatchUrl[1],'arg'=>array_slice($MatchUrl,2));
 }
 function isAction($module,$action){
   spl_autoload_register([__CLASS__,'autoloader']);

@@ -3,6 +3,7 @@ return [
 	// 路由配置
 	'router'=>[
 	# 0 module/Action/arg1/arg2...
+		'urlmode'=>0,
 		'module_path'=>'/Application/Controller/',//指向创建模块的目录，不指定默认为框架内Modules文件夹
 		'login'=>'login',//指向登陆模块，对非登陆模块进行session认证.值为则login代表module_path下的login模块，即login.php
 		'index'=>'/login/index/',//系统入口
@@ -30,7 +31,7 @@ return [
 	// ],
 	// session
 	'session'=>[
-		'secret'=>'test',//安全私钥
+		'secret'=>'scu',//安全私钥
 		'lock'=>'true',//session开关，默认为true
 	]
 ];
